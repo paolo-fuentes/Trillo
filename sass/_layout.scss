@@ -1,0 +1,99 @@
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest){
+        margin: 0; //pink bg around container disappears
+        max-width: 100%; //prevent pink bg from showing
+        width: 100%;
+    }
+}
+
+.header {
+    font-size: 1.4rem; //inherited by child
+    height: 7rem;
+    background-color: #fff;
+    border-bottom:var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest){
+        flex-wrap: wrap; //moves the search below 
+        height: 11rem;
+        align-content: space-around; //give space between search and header
+    }
+}
+
+.content{
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column;
+    }
+    
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; //flex basis
+    
+    display: flex;
+    flex-direction: column; //change direction of main axis from top to bottom
+    justify-content: space-between;
+}
+
+.hotel-view{
+    background-color: #fff;
+    flex: 1; //flex grow
+}
+
+.detail{
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+    font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium){
+        padding: 3rem;
+
+    }
+
+    @media only screen and (max-width: $bp-small){
+        flex-direction: column; //so they will occupy 100% of width and stack on top of each other
+    }
+}
+
+.description{
+    font-size: 1.4rem;
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem; 
+
+    @media only screen and (max-width: $bp-medium){
+        margin-right: 3rem;
+        padding: 2rem;
+
+    }
+
+    @media only screen and (max-width: $bp-small){
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.user-reviews{
+    flex: 1; //occupy remaining space which is 40%
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; //prevent the line below the button from stretching
+}
